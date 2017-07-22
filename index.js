@@ -2,11 +2,15 @@ const config = require('./config');
 const Display = require('./display');
 const WeekInfo = require('./weekinfo');
 
-const exampleService = new require('./services/example')();
-
-let display = new Display();
+const services = [
+    require('./services/example'),
+    require('./services/runs')
+];
 
 console.info('Starting application');
+
+console.info('Initialising display');
+let display = new Display();
 
 // ---- trap the SIGINT and reset before exit
 process.on('SIGINT', function () {
@@ -15,15 +19,13 @@ process.on('SIGINT', function () {
     process.nextTick(function () { process.exit(0); });
 });
 
-let services = [exampleService];
-
 let update = function() {
+    console.info('Updating');
 
     let weekInfo = new WeekInfo(new Date());
-
-    console.info('Updating for week start:', weekInfo.start, ' week end:', weekInfo.end);
+    console.info('Week start:', weekInfo.start, ' week end:', weekInfo.end);
     let updatePromises = services.map(service => {
-        return service.update(weekInfo);
+        return service(weekInfo);
     });
 
     Promise.all(updatePromises).then((data) => {
