@@ -1,0 +1,31 @@
+{
+  "name": "unicorn-house-calendar",
+  "version": "1.0.0",
+  "description": "App for rpi and unicorn phat to display activities for the current week",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lutas/unicorn-house-calendar.git"
+  },
+  "keywords": [
+    "rpi",
+    "unicorn",
+    "phat",
+    "hat",
+    "raspberry",
+    "pi",
+    "calendar"
+  ],
+  "author": "Phil Lutas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lutas/unicorn-house-calendar/issues"
+  },
+  "homepage": "https://github.com/lutas/unicorn-house-calendar#readme",
+  "dependencies": {
+    "rpi-ws281x-native": "^0.8.2"
+  }
+}
