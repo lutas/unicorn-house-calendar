@@ -3,6 +3,7 @@ const Display = require('./display');
 const WeekInfo = require('./weekinfo');
 
 const services = [
+    require('./services/currentday'),
     require('./services/bins'),
     require('./services/runs')
 ];
@@ -11,6 +12,7 @@ console.info('Starting application');
 
 console.info('Initialising display');
 let display = new Display();
+display.render();
 
 // ---- trap the SIGINT and reset before exit
 process.on('SIGINT', function () {

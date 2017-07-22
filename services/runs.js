@@ -68,7 +68,7 @@ module.exports = function(weekInfo) {
                 
                 let runDate = new Date(run.end_time);
                 let dayIndex = ((runDate.getDay() - 1) % 7);
-                colours[dayIndex] = Colour.BLUE;
+                colours[dayIndex] = Colour.LIGHT_YELLOW;
             });
 
             accept(colours);
