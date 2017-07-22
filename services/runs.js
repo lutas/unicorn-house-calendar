@@ -3,18 +3,6 @@ var config = require('../config');
 var http = require('http');
 var Colour = require('../colour');
 
-function getWeekData(startDate, data) {
-
-    return data.reduce((prev, val) => {
-
-        if (val) {
-            prev.push(val);
-        }
-
-        return prev;
-    }, []);
-}
-
 function downloadMonthData(time) {
 
     return new Promise((accept, reject) => {

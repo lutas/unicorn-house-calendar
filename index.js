@@ -3,7 +3,7 @@ const Display = require('./display');
 const WeekInfo = require('./weekinfo');
 
 const services = [
-    require('./services/example'),
+    require('./services/bins'),
     require('./services/runs')
 ];
 

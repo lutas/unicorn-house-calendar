@@ -12,6 +12,12 @@ module.exports = function(date) {
         date: date,
         todayNum: daysFromMonday + 1,
         start: monday,
-        end: sunday
+        end: sunday,
+        contains: function(date) {
+            return date >= this.start && date <= this.end;
+        },
+        getDayIndex: function(date) {
+            return (date.getDay() - 1) % 7;
+        }
     }
 };

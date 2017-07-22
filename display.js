@@ -1,6 +1,7 @@
 const screen = require('rpi-ws281x-native');
 //const screen = require('./dummyscreen');
 const config = require('./config');
+const Colour = require('./colour');
 
 const NUM_LEDS = 32;
 const ROW_LENGTH = 8;
@@ -45,6 +46,16 @@ const Calendar = function() {
 
         render: function() {
             screen.render(pixelData);
+        },
+
+        error: function(err) {
+            console.error(err.message);
+            pixelData.set([
+                Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, 0,
+                Colour.RED, 0, 0, 0, 0, 0, Colour.RED, 0,
+                Colour.RED, 0, 0, 0, 0, 0, Colour.RED, 0,
+                Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, 0
+            ]);
         }
     }
 };
