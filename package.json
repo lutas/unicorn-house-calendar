@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/lutas/unicorn-house-calendar#readme",
   "dependencies": {
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "node-ical": "^0.5.4",
     "rpi-ws281x-native": "^0.8.2"
   }
 }

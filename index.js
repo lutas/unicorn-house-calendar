@@ -4,6 +4,7 @@ const WeekInfo = require('./weekinfo');
 
 const services = [
     require('./services/currentday'),
+    require('./services/calendar'),
     require('./services/bins'),
     require('./services/runs')
 ];

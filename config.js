@@ -3,7 +3,8 @@ const Config = {
     updateRate: parseInt(process.env['UpdateRate']) || 3600, // 1 hour
     runningapi: process.env['RunningAPI'],
     binapihost: process.env['BinAPIHost'] || 'www.southtyneside.gov.uk',
-    binAddress: process.env['BinAddress']
+    binAddress: process.env['BinAddress'],
+    calendarUrl: process.env['CalendarUrl']
 };
 
 module.exports = Config;
