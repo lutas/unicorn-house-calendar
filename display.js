@@ -11,6 +11,8 @@ const pixelData = new Uint32Array(NUM_LEDS);
 screen.init(NUM_LEDS);
 screen.setBrightness(config.brightness);
 
+console.info('Initialised screen to brightness', config.brightness);
+
 const Row = function(index) {
 
     let pixOffset = index * ROW_LENGTH;
@@ -56,6 +58,7 @@ const Calendar = function() {
                 Colour.RED, 0, 0, 0, 0, 0, Colour.RED, 0,
                 Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, Colour.RED, 0
             ]);
+            screen.render(pixelData);
         }
     }
 };
